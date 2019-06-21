@@ -35,7 +35,7 @@
             <input type="text"  class="form-control" maxlength = "20" id="name">
           </div>
           Telephone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-          <input type="submit"><span class="phone"> Format: 123-456-7890</span>
+          <input type="submit"><span id="phone"> Format: 123-456-7890</span>
           <p>Would you like to get Deliver or Carry Out:</p>
           <div class="radio">
             <label>
@@ -132,7 +132,7 @@
         <hr>
       </div>
     </section>
-    <section>
+    <section class=bill>
       <div id="showBill">
         <p>Name: <span class="customerName"></span></p>
         <p>Phone Number: <span class="phone-number"></span></p>
@@ -145,9 +145,7 @@
         </div>
         <p>your order:<span class="pizza"></span></p>
         <p>Total Amount: <span class="price"></span></p>
-        <div id="buttons">
         </div>
-      </div>
     </section>
   </div>
 </body>

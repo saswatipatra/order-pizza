@@ -1,3 +1,6 @@
+.onDelivery, .bill{
+  display: none;
+}
 
 section{
   width: 60%;

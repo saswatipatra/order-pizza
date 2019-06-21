@@ -1,98 +1,102 @@
 // Business Logic for AddressBook ---------
-function AddressBook() {
-  this.contacts = [],
-  this.currentId = 0
-}
-
-AddressBook.prototype.addContact = function(contact) {
-  contact.id = this.assignId();
-  this.contacts.push(contact);
-}
-
-AddressBook.prototype.assignId = function() {
-  this.currentId += 1;
-  return this.currentId;
-}
-
-AddressBook.prototype.findContact = function(id) {
-  for (var i=0; i< this.contacts.length; i++) {
-    if (this.contacts[i]) {
-      if (this.contacts[i].id == id) {
-        return this.contacts[i];
-      }
-    }
-  };
-  return false;
-}
-
-AddressBook.prototype.deleteContact = function(id) {
-  for (var i=0; i< this.contacts.length; i++) {
-    if (this.contacts[i]) {
-      if (this.contacts[i].id == id) {
-        delete this.contacts[i];
-        return true;
-      }
-    }
-  };
-  return false;
-}
-
-// Business Logic for Contacts ---------
-function Contact(firstName, lastName, phoneNumber) {
+function CustomerInfo(Name, phoneNumber, orderType, crust, size, topping) {
   this.firstName = firstName,
   this.lastName = lastName,
   this.phoneNumber = phoneNumber
+  this.orderType=orderType
+  this.crust= crust
+  this.size=size
+  this.topping=topping
 }
 
-Contact.prototype.fullName = function() {
-  return this.firstName + " " + this.lastName;
+
+CustomerInfo.prototype.price = function(size,topping) {
+  var crustPrice=0;
+  var toppingPrice=0;
+  var totalPrice=0;
+
+  if (this.size==="small"){
+    crustPrice+=5;
+  }else if (this.size==="medium") {
+    crustPrice+=6;
+  }else {
+    crustPrice+=7;
+  }
+  if (this.topping==="Onion"){
+    toppingPrice+=1;
+  }
+  if (this.topping==="Chicken"){
+    toppingPrice+=3;
+  }
+  if (this.topping==="Chees"){
+    toppingPrice+=2;
+  }
+  if (this.topping==="pepperoni"){
+    toppingPrice+=3;
+  }
+  if (this.topping==="Tomato"){
+    toppingPrice+=2;
+  }
+  if (this.topping==="club"){
+    toppingPrice+=4;
+  }
+  if (this.topping==="Hawaiian"){
+    toppingPrice+=3;
+  }
+  if (this.topping==="Mushroom"){
+    toppingPrice+=2;
+  }
+  totalPrice=crustPrice+toppingPrice;
+  return totalPrice;
 }
+
+
+
+
+
+
+
+
+
+
 
 // User Interface Logic ---------
-var addressBook = new AddressBook();
+// var addressBook = new AddressBook();
 
-function displayContactDetails(addressBookToDisplay) {
-  var contactsList = $("ul#contacts");
-  var htmlForContactInfo = "";
-  addressBookToDisplay.contacts.forEach(function(contact) {
-    htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
-  });
-  contactsList.html(htmlForContactInfo);
-};
 
-function showContact(contactId) {
-  var contact = addressBook.findContact(contactId);
-  $("#show-contact").show();
-  $(".first-name").html(contact.firstName);
-  $(".last-name").html(contact.lastName);
-  $(".phone-number").html(contact.phoneNumber);
-  var buttons = $("#buttons");
-  buttons.empty();
-  buttons.append("<button class='deleteButton' id=" + contact.id + ">Delete</button>");
+function showDelivery(){
+  $(".onDelivery").show();
 }
 
-function attachContactListeners() {
-  $("ul#contacts").on("click", "li", function() {
-    showContact(this.id);
-  });
-  $("#buttons").on("click", ".deleteButton", function() {
-    addressBook.deleteContact(this.id);
-    $("#show-contact").hide();
-    displayContactDetails(addressBook);
-  });
-};
+// function attachContactListeners() {
+//   $("ul#contacts").on("click", "li", function() {
+//     showContact(this.id);
+//   });
+//   $("#buttons").on("click", ".deleteButton", function() {
+//     addressBook.deleteContact(this.id);
+//     $("#show-contact").hide();
+//     displayContactDetails(addressBook);
+//   });
+// };
 
 $(document).ready(function() {
-  attachContactListeners();
-  $("form#new-contact").submit(function(event) {
+  // $(".onDelivery").hide();
+  // attachContactListeners();
+  $("form#userinfo").submit(function(event) {
     event.preventDefault();
-    var inputtedFirstName = $("input#new-first-name").val();
-    var inputtedLastName = $("input#new-last-name").val();
-    var inputtedPhoneNumber = $("input#new-phone-number").val();
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input#new-phone-number").val("");
-    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+    var userName = $("input#name").val();
+    var phoneNumber = $("input#phone").val();
+    var orderType = $("input:radio[name=orderType]:checked").val();
+    var street = $("input#street").val();
+    var city = $("input#city").val();
+    var state = $("input#state").val();
+    var zipCode = $("input#zipCode").val();
+    var crust = $("input:radio[name=crust]:checked").val();
+    var size = $("input:radio[name=size]:checked").val();
+    var topping = $('.topping:checked').val();
+
+    var neworder = new CustomerInfo(userName,phoneNumber,orderType,crust,size,topping);
+    CustomerInfo.prototype.price = function(size,topping)
     addressBook.addContact(newContact);
     displayContactDetails(addressBook);
   })
