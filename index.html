@@ -35,14 +35,12 @@
                 <label for="name">Name</label>
                 <input type="text"  class="form-control" id="name">
               </div>
-              <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="text"  class="form-control" id="phoneNumber">
-              </div>
+              Telephone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+              <input type="submit"><span>Format: 123-456-7890</span>
               <p>Would you like to get Deliver or Carry Out:</p>
               <div class="radio">
                 <label>
-                  <input type="radio" name="oderType" value="delivery" checked>
+                  <input type="radio" onclick= "showDelivery()" name="oderType" value="delivery" checked>
                   Delivery
                 </label>
               </div>
@@ -121,24 +119,16 @@
                 </label>
               </div>
               <p>Select your Pizza Toppings:</p>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="small" checked>
-                  Small
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="medium">
-                  Medium
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="large">
-                Large
-                </label>
-              </div>
+              <input type="checkbox" class="topping" name="topping" value="Onion"> Onion<br>
+              <input type="checkbox" class="topping" name="topping" value="Chees"> Chees<br>
+              <input type="checkbox" class="topping" name="topping" value="pepperoni"> pepperoni<br>
+              <input type="checkbox" class="topping" name="topping" value="Tomato"> Tomato<br>
+              <input type="checkbox" class="topping" name="topping" value="club"> club<br>
+              <input type="checkbox" class="topping" name="topping" value="Chicken"> Chicken<br>
+              <input type="checkbox" class="topping" name="topping" value="Hawaiian"> Hawaiian<br>
+              <input type="checkbox" class="topping" name="topping" value="Mushroom"> Mushroom<br>
+
+
               <button type="submit" class="btn-primary">Order Now</button>
             </form>
             <hr>
