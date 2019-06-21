@@ -1,0 +1,36 @@
+
+section{
+  width: 60%;
+  border-left: 20%;
+  margin-left: 15%;
+
+}
+.phone{
+  font-size: bold;
+  font-style: italic;
+  color: blue;
+}
+header{
+  background-color:#B98C8C;
+  margin-left: 15%;
+  margin-top: 5%;
+  font-style: italic;
+  font-weight: bolder;
+  text-align: center;
+}
+body,html{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+.background{
+  background: radial-gradient(circle, black, white);
+  /* background-image: url(https://techcrunch.com/wp-content/uploads/2018/10/GettyImages-1005882486.jpg?w=730&crop=1); */
+  margin:0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}

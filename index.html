@@ -7,17 +7,18 @@
   <script src="js/scripts.js"></script>
   <title>Online Pizza booking</title>
 </head>
-<body>
+<body class="background">
   <div class="body-homwpage">
     <header>
+      <hr>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <p onclick="showHomePage()" id="home">Home</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <p onclick="showOrder()" id="order">Order here!</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <p onclick="showMenu()" id="menu">Menu</p>
         </div>
       </div>
@@ -26,129 +27,128 @@
     <br><br><br>
     <section>
       <div id="userinfo">
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Start your Order:</h2>
-            <hr>
-            <form id="userDetails">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text"  class="form-control" id="name">
-              </div>
-              Telephone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-              <input type="submit"><span>Format: 123-456-7890</span>
-              <p>Would you like to get Deliver or Carry Out:</p>
-              <div class="radio">
-                <label>
-                  <input type="radio" onclick= "showDelivery()" name="oderType" value="delivery" checked>
-                  Delivery
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="orderType" value="carryout">
-                  Carry Out
-                </label>
-              </div>
-              <div class="onDelivery">
-                <div class="form-group">
-                  <label for="street">Street Address</label>
-                  <input type="text"  class="form-control" id="street ">
-                </div>
-                <div class="form-group">
-                  <label for="city">City</label>
-                  <input type="text"  class="form-control" id="city">
-                </div>
-                <div class="form-group">
-                  <label for="state">State</label>
-                  <input type="text"  class="form-control" id="state">
-                </div>
-                <div class="form-group">
-                  <label for="zipCode">Zip Code</label>
-                  <input type="text"  class="form-control" id="zipCode">
-                </div>
-              </div>
-              <p>Kindly select you curst:</p>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="crust" value="hand-tossed" checked>
-                  Hand Tossed
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="crust" value="handmade-pan">
-                  Handmade Pan
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="crust" value="thin-crust">
-                  Crunchy Thin Crust
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="crust" value="gluten-free">
-                  Gluten Free Crust
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="crust" value="brooklyn-style">
-                  Brooklyn Style
-                </label>
-              </div>
-              <p>Select your Pizza size:</p>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="small" checked>
-                  Small
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="medium">
-                  Medium
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input type="radio" name="size" value="large">
-                Large
-                </label>
-              </div>
-              <p>Select your Pizza Toppings:</p>
-              <input type="checkbox" class="topping" name="topping" value="Onion"> Onion<br>
-              <input type="checkbox" class="topping" name="topping" value="Chees"> Chees<br>
-              <input type="checkbox" class="topping" name="topping" value="pepperoni"> pepperoni<br>
-              <input type="checkbox" class="topping" name="topping" value="Tomato"> Tomato<br>
-              <input type="checkbox" class="topping" name="topping" value="club"> club<br>
-              <input type="checkbox" class="topping" name="topping" value="Chicken"> Chicken<br>
-              <input type="checkbox" class="topping" name="topping" value="Hawaiian"> Hawaiian<br>
-              <input type="checkbox" class="topping" name="topping" value="Mushroom"> Mushroom<br>
-
-
-              <button type="submit" class="btn-primary">Order Now</button>
-            </form>
-            <hr>
+        <h2>Start your Order:</h2>
+        <hr>
+        <form id="userDetails">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text"  class="form-control" maxlength = "20" id="name">
           </div>
-        </section>
-
-        <h2>Contacts:</h2>
-        <ul id="contacts">
-        </ul>
+          Telephone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          <input type="submit"><span class="phone"> Format: 123-456-7890</span>
+          <p>Would you like to get Deliver or Carry Out:</p>
+          <div class="radio">
+            <label>
+              <input type="radio" onclick= "showDelivery()" name="oderType" value="delivery" checked>
+              Delivery
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="orderType" value="carryout">
+              Carry Out
+            </label>
+          </div>
+          <div class="onDelivery">
+            <div class="form-group">
+              <label for="street">Street Address</label>
+              <input type="text"  class="form-control" maxlength = "20" id="street ">
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text"  class="form-control" maxlength = "10" id="city">
+            </div>
+            <div class="form-group">
+              <label for="state">State</label>
+              <input type="text"  class="form-control" maxlength = "10" id="state">
+            </div>
+            <div class="form-group">
+              <label for="zipCode">Zip Code</label>
+              <input type="number"  class="form-control" maxlength = "10" id="zipCode">
+            </div>
+          </div>
+          <p>Kindly select you curst:</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="crust" value="hand-tossed" checked>
+              Hand Tossed
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="crust" value="handmade-pan">
+              Handmade Pan
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="crust" value="thin-crust">
+              Crunchy Thin Crust
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="crust" value="gluten-free">
+              Gluten Free Crust
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="crust" value="brooklyn-style">
+              Brooklyn Style
+            </label>
+          </div>
+          <p>Select your Pizza size:</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="small" checked>
+              Small
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="medium">
+              Medium
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="size" value="large">
+              Large
+            </label>
+          </div>
+          <p>Select your Pizza Toppings:</p>
+          <input type="checkbox" class="topping" name="topping" value="Onion"> Onion<br>
+          <input type="checkbox" class="topping" name="topping" value="Chees"> Chees<br>
+          <input type="checkbox" class="topping" name="topping" value="pepperoni"> pepperoni<br>
+          <input type="checkbox" class="topping" name="topping" value="Tomato"> Tomato<br>
+          <input type="checkbox" class="topping" name="topping" value="club"> club<br>
+          <input type="checkbox" class="topping" name="topping" value="Chicken"> Chicken<br>
+          <input type="checkbox" class="topping" name="topping" value="Hawaiian"> Hawaiian<br>
+          <input type="checkbox" class="topping" name="topping" value="Mushroom"> Mushroom<br>
+          <br><br><br>
+          <button type="submit" class="btn-primary">Order Now</button>
+        </form>
+        <hr>
       </div>
-      <div class="col-md-6">
-        <div id="show-contact">
-          <p>First Name: <span class="first-name"></span></p>
-          <p>Last Name: <span class="last-name"></span></p>
-          <p>Phone Number: <span class="phone-number"></span></p>
-          <div id="buttons">
-          </div>
+    </section>
+    <section>
+      <div id="showBill">
+        <p>Name: <span class="customerName"></span></p>
+        <p>Phone Number: <span class="phone-number"></span></p>
+        <div class="address">
+          <p>Delivery Address</p>
+          <p>Street:<span class="street"></span></p>
+          <p>city:<span class="city"></span></p>
+          <p>state:<span class="state"></span></p>
+          <p>Zip Code:<span class="zipCode"></span></p>
+        </div>
+        <p>your order:<span class="pizza"></span></p>
+        <p>Total Amount: <span class="price"></span></p>
+        <div id="buttons">
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </body>
 </html>
