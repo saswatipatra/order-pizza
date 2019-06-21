@@ -25,7 +25,6 @@ body,html{
 }
 .background{
   background: radial-gradient(circle, black, white);
-  /* background-image: url(https://techcrunch.com/wp-content/uploads/2018/10/GettyImages-1005882486.jpg?w=730&crop=1); */
   margin:0;
   width: 100%;
   height: 100%;
