@@ -34,19 +34,21 @@
             <label for="name">Name</label>
             <input type="text"  class="form-control" maxlength = "20" id="name">
           </div>
-          Telephone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-          <input type="submit"><span id="phone"> Format: 123-456-7890</span>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text"  class="form-control" maxlength = "20" id="phone">
+          </div>
+          <!-- Telephone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          <input type="number"><span id="phone"> Format: 123-456-7890</span> -->
           <p>Would you like to get Deliver or Carry Out:</p>
           <div class="radio">
             <label>
-              <input type="radio" onclick= "showDelivery()" name="oderType" value="delivery" checked>
-              Delivery
+              <input type="radio" onclick="hideaddress()"  name="type" value="carryout" checked>Carry Out
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="orderType" value="carryout">
-              Carry Out
+              <input type="radio"  onclick="showaddress()"  name="type" value="delivery">Delivery
             </label>
           </div>
           <div class="onDelivery">
@@ -131,11 +133,12 @@
         </form>
         <hr>
       </div>
-    </section>
-    <section class=bill>
-      <div id="showBill">
+     <div id="showBill">
         <p>Name: <span class="customerName"></span></p>
         <p>Phone Number: <span class="phone-number"></span></p>
+        <div class="carryout">
+          <p>Thank you for ordering. Your pizza will be ready to take out within 15mins.</p>
+        </div>
         <div class="address">
           <p>Delivery Address</p>
           <p>Street:<span class="street"></span></p>
@@ -145,7 +148,7 @@
         </div>
         <p>your order:<span class="pizza"></span></p>
         <p>Total Amount: <span class="price"></span></p>
-        </div>
+      </div>
     </section>
   </div>
 </body>

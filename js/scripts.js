@@ -1,20 +1,14 @@
 // Business Logic for AddressBook ---------
-function CustomerInfo(Name, phoneNumber, orderType, crust, size, topping) {
-  this.firstName = firstName,
-  this.lastName = lastName,
-  this.phoneNumber = phoneNumber
-  this.orderType=orderType
-  this.crust= crust
+function CustomerInfo(size, topping) {
   this.size=size
   this.topping=topping
+  this.cost=0;
 }
 
 
-CustomerInfo.prototype.price = function(size,topping) {
+CustomerInfo.prototype.price = function() {
   var crustPrice=0;
   var toppingPrice=0;
-  var totalPrice=0;
-
   if (this.size==="small"){
     crustPrice+=5;
   }else if (this.size==="medium") {
@@ -46,26 +40,17 @@ CustomerInfo.prototype.price = function(size,topping) {
   if (this.topping==="Mushroom"){
     toppingPrice+=2;
   }
-  totalPrice=crustPrice+toppingPrice;
-  return totalPrice;
+  this.cost=crustPrice+toppingPrice;
+  return this.cost;
 }
 
-
-
-
-
-
-
-
-
-
-
 // User Interface Logic ---------
-// var addressBook = new AddressBook();
-
-
-function showDelivery(){
+function showaddress(){
   $(".onDelivery").show();
+  }
+
+function hideaddress()
+{$(".onDelivery").hide();
 }
 
 // function attachContactListeners() {
@@ -84,6 +69,13 @@ $(document).ready(function() {
   // attachContactListeners();
   $("form#userinfo").submit(function(event) {
     event.preventDefault();
+    debugger;
+    // var yes = document.getElementById("#yes");
+    // if(yes.checked){
+    //   $(".onDelivery").show();
+    // }else {
+    //   $(".onDelivery").hide();
+    // }
     var userName = $("input#name").val();
     var phoneNumber = $("input#phone").val();
     var orderType = $("input:radio[name=orderType]:checked").val();
@@ -95,9 +87,26 @@ $(document).ready(function() {
     var size = $("input:radio[name=size]:checked").val();
     var topping = $('.topping:checked').val();
 
-    var neworder = new CustomerInfo(userName,phoneNumber,orderType,crust,size,topping);
-    CustomerInfo.prototype.price = function(size,topping)
-    addressBook.addContact(newContact);
-    displayContactDetails(addressBook);
-  })
-})
+    var neworder = new CustomerInfo(size,topping);
+    neworder.price();
+    $("#showBill").show();
+      $("#userinfo").hide();
+    // $(".carryout").hide();
+    // $(".address").hide();
+
+    $(".customerName").text(userName);
+    $(".phone-number").text(phoneNumber);
+    // if (orderType==="delivery"){
+    //   $(".carryout").hide();
+    //   $(".street").text();
+    //   $(".city").text();
+    //   $(".state").text();
+    //   $(".zipCode").text();
+    // }else{
+    //   $(".address").hide();
+    //   $(".carryout").show();
+    // }
+    $(".pizza").append("size is:" + size + "crust:"+ crust +"and toppings are:" + topping);
+    $(".price").text(neworder.cost);
+});
+});
