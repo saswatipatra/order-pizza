@@ -12,7 +12,7 @@ _This is the webpage where you can order pizza online, that will ask the user to
 
 * _Open the Terminal (Mac) or Git Bash (PC)_
 * _Go to the dir. where you would like to install the file. (for ex. computer-name:~ Guest$ cd desktop_
-* _To make a copy of a repository from Github on a local machine computer-name: desktop Guest$ git clone https://github.com/saswatipatra/book-pizza)._
+* _To make a copy of a repository from Github on a local machine computer-name: desktop Guest$ git clone https://github.com/saswatipatra/order-pizza)._
 * _Hola a new file should appear named "Beep-Boop", simply click on the HTML file_
 
 ## Support and contact details

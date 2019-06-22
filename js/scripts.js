@@ -65,17 +65,9 @@ function hideaddress()
 // };
 
 $(document).ready(function() {
-  // $(".onDelivery").hide();
-  // attachContactListeners();
-  $("form#userinfo").submit(function(event) {
+    $("#userinfo").submit(function(event) {
     event.preventDefault();
-    debugger;
-    // var yes = document.getElementById("#yes");
-    // if(yes.checked){
-    //   $(".onDelivery").show();
-    // }else {
-    //   $(".onDelivery").hide();
-    // }
+    // debugger;
     var userName = $("input#name").val();
     var phoneNumber = $("input#phone").val();
     var orderType = $("input:radio[name=orderType]:checked").val();
@@ -89,24 +81,23 @@ $(document).ready(function() {
 
     var neworder = new CustomerInfo(size,topping);
     neworder.price();
+    $(".carryout").hide();
+    $(".address").hide();
     $("#showBill").show();
-      $("#userinfo").hide();
-    // $(".carryout").hide();
-    // $(".address").hide();
-
+    $("#userinfo").hide();
     $(".customerName").text(userName);
     $(".phone-number").text(phoneNumber);
-    // if (orderType==="delivery"){
-    //   $(".carryout").hide();
-    //   $(".street").text();
-    //   $(".city").text();
-    //   $(".state").text();
-    //   $(".zipCode").text();
-    // }else{
-    //   $(".address").hide();
-    //   $(".carryout").show();
-    // }
-    $(".pizza").append("size is:" + size + "crust:"+ crust +"and toppings are:" + topping);
+    if (orderType==="delivery"){
+      $(".carryout").hide();
+      $(".street").text();
+      $(".city").text();
+      $(".state").text();
+      $(".zipCode").text();
+    }else{
+      $(".address").hide();
+      $(".carryout").show();
+    }
+    $(".pizza").append("size=> "  + size + '<br>' + " crust=> "+ crust + '<br>' +" and toppings are=> " + topping);
     $(".price").text(neworder.cost);
 });
 });

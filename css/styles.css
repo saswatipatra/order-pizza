@@ -1,8 +1,13 @@
-.onDelivery, #showBill{
+.onDelivery{
   display: none;
 }
+#showBill{
+  display: none;
+  font-size: normal;
+  color: white;
+}
 
-section{
+.page{
   width: 60%;
   border-left: 20%;
   margin-left: 15%;
