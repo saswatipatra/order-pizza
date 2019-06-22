@@ -7,26 +7,26 @@
   <script src="js/scripts.js"></script>
   <title>Online Pizza booking</title>
 </head>
-<body class="background">
-  <div class="body-homwpage">
+<body background="img/background.jpg" class="background">
+  <div class="body-homwpage" id="homwpage">
     <header>
       <hr>
       <div class="row">
         <div class="col-md-3">
-          <p onclick="showHomePage()" id="home">Home</p>
+          <p><a href="#homwpage">Home</a> </p>
         </div>
         <div class="col-md-3">
-          <p onclick="showOrder()" id="order">Order here!</p>
+          <p> <a href="#userinfo">Order here!</a></p>
         </div>
         <div class="col-md-3">
-          <p onclick="showMenu()" id="menu">Menu</p>
+          <p><a href="menu.html">Menu</a></p>
         </div>
       </div>
       <hr>
     </header>
     <br><br><br>
     <div class="page">
-      <div id="userinfo">
+          <div id="userinfo">
         <h2>Start your Order:</h2>
         <hr>
         <form id="userDetails">
@@ -40,6 +40,8 @@
           </div>
           <!-- Telephone: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
           <input type="number"><span id="phone"> Format: 123-456-7890</span> -->
+          <img class="carryout image"src="img/carryout.jpg" alt=" carry out image">
+          <img class="delivery image"src="img/delivery.jpg" alt=" delivery image">
           <p>Would you like to get Deliver or Carry Out:</p>
           <div class="radio">
             <label>
@@ -99,7 +101,9 @@
               <input type="radio" name="crust" value="brooklyn-style">
               Brooklyn Style
             </label>
+            <img class="image2" src="img/sizechart.png" alt="pizza size chart">
           </div>
+
           <p>Select your Pizza size:</p>
           <div class="radio">
             <label>
@@ -119,15 +123,27 @@
               Large
             </label>
           </div>
+          <div class="image">
+          <img id="img1" src="img/pizza.png" alt="pizza image">
+          <img id="img2" src="img/onion.jpg" alt="Onion topping">
+          <img id="img3" src="img/cheesepizza.jpg" alt="Chees topping">
+          <img id="img4" src="img/pepperoniPizza.jpg" alt="pepperoni topping">
+          <img id="img5" src="img/tomato.jpg" alt="Tomato topping">
+          <img id="img6" src="img/club.jpg" alt="club topping">
+          <img id="img7" src="img/chicken.jpg" alt="Chicken topping">
+          <img id="img8" src="img/hawaiian.jpg" alt="Hawaiian topping">
+          <img id="img9" src="img/cheesepepperonimushroom.jpg" alt="Mushroom topping">
+          </div>
           <p>Select your Pizza Toppings:</p>
-          <input type="checkbox" class="topping" name="topping" value="Onion"> Onion<br>
-          <input type="checkbox" class="topping" name="topping" value="Chees"> Chees<br>
-          <input type="checkbox" class="topping" name="topping" value="pepperoni"> pepperoni<br>
-          <input type="checkbox" class="topping" name="topping" value="Tomato"> Tomato<br>
-          <input type="checkbox" class="topping" name="topping" value="club"> club<br>
-          <input type="checkbox" class="topping" name="topping" value="Chicken"> Chicken<br>
-          <input type="checkbox" class="topping" name="topping" value="Hawaiian"> Hawaiian<br>
-          <input type="checkbox" class="topping" name="topping" value="Mushroom"> Mushroom<br>
+          <input type="checkbox" onclick="image1()" name="topping" value="Onion"> Onion<br>
+          <input type="checkbox" onclick="image2()" name="topping" value="Chees"> Chees<br>
+          <input type="checkbox" onclick="image3()" name="topping" value="pepperoni"> pepperoni<br>
+          <input type="checkbox" onclick="image4()" name="topping" value="Tomato"> Tomato<br>
+          <input type="checkbox" onclick="image5()" name="topping" value="club"> club<br>
+          <input type="checkbox" onclick="image6()" name="topping" value="Chicken"> Chicken<br>
+          <input type="checkbox" onclick="image7()" name="topping" value="Hawaiian"> Hawaiian<br>
+          <input type="checkbox" onclick="image8()" name="topping" value="Mushroom"> Mushroom<br>
+
           <br><br><br>
           <button type="submit" class="btn-primary">Order Now</button>
         </form>

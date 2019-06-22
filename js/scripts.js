@@ -1,4 +1,17 @@
-// Business Logic for AddressBook ---------
+function imagehide() {
+$("#img1").hide();
+$("#img2").hide();
+$("#img3").hide();
+$("#img4").hide();
+$("#img5").hide();
+$("#img6").hide();
+$("#img7").hide();
+$("#img8").hide();
+$("#img9").hide();
+}
+
+
+// Business Logic---------
 function CustomerInfo(size, topping) {
   this.size=size
   this.topping=topping
@@ -47,23 +60,47 @@ CustomerInfo.prototype.price = function() {
 // User Interface Logic ---------
 function showaddress(){
   $(".onDelivery").show();
+  $(".carryout").hide();
+  $(".delivery").show();
   }
 
 function hideaddress()
 {$(".onDelivery").hide();
+$(".carryout").show();
+$(".delivery").hide();
 }
-
-// function attachContactListeners() {
-//   $("ul#contacts").on("click", "li", function() {
-//     showContact(this.id);
-//   });
-//   $("#buttons").on("click", ".deleteButton", function() {
-//     addressBook.deleteContact(this.id);
-//     $("#show-contact").hide();
-//     displayContactDetails(addressBook);
-//   });
-// };
-
+function image1() {
+  imagehide();
+  $("#img2").show();
+}
+function image2() {
+  imagehide();
+  $("#img3").show();
+}
+function image3() {
+  imagehide();
+  $("#img4").show();
+}
+function image4() {
+  imagehide();
+  $("#img5").show();
+}
+function image5() {
+  imagehide();
+  $("#img6").show();
+}
+function image6() {
+  imagehide();
+  $("#img7").show();
+}
+function image7() {
+  imagehide();
+  $("#img8").show();
+}
+function image8() {
+  imagehide();
+  $("#img9").show();
+}
 $(document).ready(function() {
     $("#userinfo").submit(function(event) {
     event.preventDefault();
