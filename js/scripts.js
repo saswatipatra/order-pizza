@@ -135,6 +135,6 @@ $(document).ready(function() {
       $(".carryout").show();
     }
     $(".pizza").append("size=> "  + size + '<br>' + " crust=> "+ crust + '<br>' +" and toppings are=> " + topping);
-    $(".price").text(neworder.cost);
+    $(".price").text("$ "+ neworder.cost);
 });
 });
