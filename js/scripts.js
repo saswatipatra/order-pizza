@@ -29,30 +29,25 @@ CustomerInfo.prototype.price = function() {
   }else {
     crustPrice+=7;
   }
-  if (this.topping==="Onion"){
+  for(var i=0; i< this.topping.length; i++){
+    if (this.topping[i]==="Onion"){
     toppingPrice+=1;
-  }
-  if (this.topping==="Chicken"){
+  }else if (this.topping[i]==="Chicken"){
     toppingPrice+=3;
-  }
-  if (this.topping==="Chees"){
+  }else if (this.topping[i]==="Cheese"){
     toppingPrice+=2;
-  }
-  if (this.topping==="pepperoni"){
+  }else if (this.topping[i]==="Pepperoni"){
     toppingPrice+=3;
-  }
-  if (this.topping==="Tomato"){
+  }else if (this.topping[i]==="Tomato"){
     toppingPrice+=2;
-  }
-  if (this.topping==="club"){
+  }else if (this.topping[i]==="Club"){
     toppingPrice+=4;
-  }
-  if (this.topping==="Hawaiian"){
+  }else if (this.topping[i]==="Hawaiian"){
     toppingPrice+=3;
-  }
-  if (this.topping==="Mushroom"){
+  }else if(this.topping[i]==="Mushroom"){
     toppingPrice+=2;
   }
+}
   this.cost=crustPrice+toppingPrice;
   return this.cost;
 }
@@ -104,7 +99,6 @@ function image8() {
 $(document).ready(function() {
     $("#userinfo").submit(function(event) {
     event.preventDefault();
-    // debugger;
     var userName = $("input#name").val();
     var phoneNumber = $("input#phone").val();
     var orderType = $("input:radio[name=orderType]:checked").val();
@@ -114,7 +108,9 @@ $(document).ready(function() {
     var zipCode = $("input#zipCode").val();
     var crust = $("input:radio[name=crust]:checked").val();
     var size = $("input:radio[name=size]:checked").val();
-    var topping = $('.topping:checked').val();
+    var topping = [];
+    $.each($("input[name='topping']:checked"),function(){   topping.push($(this).val());
+      });
 
     var neworder = new CustomerInfo(size,topping);
     neworder.price();
@@ -134,7 +130,7 @@ $(document).ready(function() {
       $(".address").hide();
       $(".carryout").show();
     }
-    $(".pizza").append("size=> "  + size + '<br>' + " crust=> "+ crust + '<br>' +" and toppings are=> " + topping);
-    $(".price").text(neworder.cost);
+    $(".pizza").append("size=> "  + size + '<br>' + " crust=> "+ crust + '<br>' +" and toppings are=> " + topping.join(", "));
+    $(".price").text("$ "+ neworder.cost);
 });
 });
