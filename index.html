@@ -16,7 +16,7 @@
           <p><a href="#homwpage">Home</a> </p>
         </div>
         <div class="col-md-3">
-          <p> <a href="#userinfo">Order here!</a></p>
+          <p> <a href="#userDetails">Order here!</a></p>
         </div>
         <div class="col-md-3">
           <p><a href="menu.html">Menu</a></p>
@@ -45,12 +45,12 @@
           <p>Would you like to get Deliver or Carry Out:</p>
           <div class="radio">
             <label>
-              <input type="radio" onclick="hideaddress()"  name="type" value="carryout" checked>Carry Out
+              <input type="radio" onclick="hideaddress()"  name="orderType" value="carryout" checked>Carry Out
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio"  onclick="showaddress()"  name="type" value="delivery">Delivery
+              <input type="radio"  onclick="showaddress()"  name="orderType" value="delivery">Delivery
             </label>
           </div>
           <div class="onDelivery">
@@ -135,16 +135,22 @@
           <img id="img9" src="img/cheesepepperonimushroom.jpg" alt="Mushroom topping">
           </div>
           <p>Select your Pizza Toppings:</p>
-          <input type="checkbox" onclick="image1()" name="topping" value="Onion"> Onion<br>
-          <input type="checkbox" onclick="image2()" name="topping" value="Chees"> Chees<br>
-          <input type="checkbox" onclick="image3()" name="topping" value="pepperoni"> pepperoni<br>
-          <input type="checkbox" onclick="image4()" name="topping" value="Tomato"> Tomato<br>
-          <input type="checkbox" onclick="image5()" name="topping" value="club"> club<br>
-          <input type="checkbox" onclick="image6()" name="topping" value="Chicken"> Chicken<br>
-          <input type="checkbox" onclick="image7()" name="topping" value="Hawaiian"> Hawaiian<br>
-          <input type="checkbox" onclick="image8()" name="topping" value="Mushroom"> Mushroom<br>
-
-          <br><br><br>
+          <label><input onclick="image1()" type="checkbox" value="Onion" name="topping"> Onion</label>
+           <br>
+           <label><input onclick="image2()" type="checkbox" value="Cheese" name="topping"> Cheese</label>
+            <br>
+            <label><input onclick="image3()" type="checkbox" value="Pepperoni" name="topping"> Pepperoni</label>
+             <br>
+             <label><input onclick="image4()" type="checkbox" value="Tomato" name="topping"> Tomato</label>
+              <br>
+              <label><input onclick="image5()" type="checkbox" value="Club" name="topping"> Club</label>
+               <br>
+               <label><input onclick="image6()" type="checkbox" value="Chicken" name="topping"> Chicken</label>
+                <br>
+                <label><input onclick="image7()" type="checkbox" value="Hawaiian" name="topping"> Hawaiian</label>
+                 <br>
+                 <label><input onclick="image8()" type="checkbox" value="Mushroom" name="topping"> Mushroom</label>
+                  <br><br><br>
           <button type="submit" class="btn-primary">Order Now</button>
         </form>
         <hr>
